@@ -7,9 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4AA0F8101A06DEC600E5756D /* JKGameKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4AA0F80F1A06DEC600E5756D /* JKGameKit.h */; };
-		4AA0F8121A06DEC600E5756D /* JKGameKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA0F8111A06DEC600E5756D /* JKGameKit.m */; };
+		4A1052D11A07B8F900946485 /* JKNodeProtocol.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4AA0F8281A06E11600E5756D /* JKNodeProtocol.h */; };
+		4A1052D21A07B8F900946485 /* JKPluginProtocol.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4A40F5E01A079E0500DF1CF3 /* JKPluginProtocol.h */; };
+		4A1052D31A07B8F900946485 /* JKScene.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4A40F5E11A07A94C00DF1CF3 /* JKScene.h */; };
+		4A3A38CA1A10F85D00C1FDAD /* JKPluginContactHandlerBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A3A38C91A10F85D00C1FDAD /* JKPluginContactHandlerBase.m */; };
+		4A40F5E31A07A94C00DF1CF3 /* JKScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A40F5E21A07A94C00DF1CF3 /* JKScene.m */; };
+		4A94AFA51A07FAF60067AB66 /* JKNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A94AFA41A07FAF60067AB66 /* JKNode.m */; };
+		4A94AFA81A080C930067AB66 /* JKGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A94AFA71A080C930067AB66 /* JKGameScene.m */; };
+		4A94AFAB1A080CDA0067AB66 /* JKWorldNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A94AFAA1A080CDA0067AB66 /* JKWorldNode.m */; };
+		4A94AFAF1A080D0F0067AB66 /* JKHudNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A94AFAE1A080D0F0067AB66 /* JKHudNode.m */; };
+		4A94AFB21A080D1D0067AB66 /* JKCameraNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A94AFB11A080D1D0067AB66 /* JKCameraNode.m */; };
+		4A94AFB51A080EB10067AB66 /* JKSpriteNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A94AFB41A080EB10067AB66 /* JKSpriteNode.m */; };
+		4A94AFB81A080FE40067AB66 /* JKGameNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A94AFB71A080FE40067AB66 /* JKGameNode.m */; };
+		4A94AFBF1A0814050067AB66 /* JKPluginBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A94AFBE1A0814050067AB66 /* JKPluginBase.m */; };
+		4A94AFC21A0819E90067AB66 /* JKPluginCtrlBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A94AFC11A0819E90067AB66 /* JKPluginCtrlBase.m */; };
+		4A94AFCA1A0827E00067AB66 /* JKPluginTouchDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A94AFC71A0827E00067AB66 /* JKPluginTouchDispatcher.m */; };
+		4A94AFCB1A0827E00067AB66 /* JKPluginTouchHandlerBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A94AFC91A0827E00067AB66 /* JKPluginTouchHandlerBase.m */; };
+		4A94AFE51A0913200067AB66 /* JKTextureCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A94AFE41A0913200067AB66 /* JKTextureCache.m */; };
+		4A94AFE81A0913920067AB66 /* JKOrderedDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A94AFE71A0913920067AB66 /* JKOrderedDictionary.m */; };
+		4A94AFEC1A095FCF0067AB66 /* JKPluginAnimationBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A94AFEB1A095FCF0067AB66 /* JKPluginAnimationBase.m */; };
 		4AA0F8181A06DEC600E5756D /* libJKGameKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AA0F80C1A06DEC600E5756D /* libJKGameKit.a */; };
+		4ABF50AE1A126281006CD964 /* JKShadowedLabelNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABF50AD1A126281006CD964 /* JKShadowedLabelNode.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,18 +47,59 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				4AA0F8101A06DEC600E5756D /* JKGameKit.h in CopyFiles */,
+				4A1052D11A07B8F900946485 /* JKNodeProtocol.h in CopyFiles */,
+				4A1052D21A07B8F900946485 /* JKPluginProtocol.h in CopyFiles */,
+				4A1052D31A07B8F900946485 /* JKScene.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4A3A38C81A10F85D00C1FDAD /* JKPluginContactHandlerBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKPluginContactHandlerBase.h; sourceTree = "<group>"; };
+		4A3A38C91A10F85D00C1FDAD /* JKPluginContactHandlerBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKPluginContactHandlerBase.m; sourceTree = "<group>"; };
+		4A40F5E01A079E0500DF1CF3 /* JKPluginProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKPluginProtocol.h; sourceTree = "<group>"; };
+		4A40F5E11A07A94C00DF1CF3 /* JKScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKScene.h; sourceTree = "<group>"; };
+		4A40F5E21A07A94C00DF1CF3 /* JKScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKScene.m; sourceTree = "<group>"; };
+		4A94AFA31A07FAF60067AB66 /* JKNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKNode.h; sourceTree = "<group>"; };
+		4A94AFA41A07FAF60067AB66 /* JKNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKNode.m; sourceTree = "<group>"; };
+		4A94AFA61A080C930067AB66 /* JKGameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKGameScene.h; sourceTree = "<group>"; };
+		4A94AFA71A080C930067AB66 /* JKGameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKGameScene.m; sourceTree = "<group>"; };
+		4A94AFA91A080CDA0067AB66 /* JKWorldNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKWorldNode.h; sourceTree = "<group>"; };
+		4A94AFAA1A080CDA0067AB66 /* JKWorldNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKWorldNode.m; sourceTree = "<group>"; };
+		4A94AFAD1A080D0F0067AB66 /* JKHudNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKHudNode.h; sourceTree = "<group>"; };
+		4A94AFAE1A080D0F0067AB66 /* JKHudNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKHudNode.m; sourceTree = "<group>"; };
+		4A94AFB01A080D1D0067AB66 /* JKCameraNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKCameraNode.h; sourceTree = "<group>"; };
+		4A94AFB11A080D1D0067AB66 /* JKCameraNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKCameraNode.m; sourceTree = "<group>"; };
+		4A94AFB31A080EB10067AB66 /* JKSpriteNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKSpriteNode.h; sourceTree = "<group>"; };
+		4A94AFB41A080EB10067AB66 /* JKSpriteNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKSpriteNode.m; sourceTree = "<group>"; };
+		4A94AFB61A080FE40067AB66 /* JKGameNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKGameNode.h; sourceTree = "<group>"; };
+		4A94AFB71A080FE40067AB66 /* JKGameNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKGameNode.m; sourceTree = "<group>"; };
+		4A94AFBD1A0814050067AB66 /* JKPluginBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKPluginBase.h; sourceTree = "<group>"; };
+		4A94AFBE1A0814050067AB66 /* JKPluginBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKPluginBase.m; sourceTree = "<group>"; };
+		4A94AFC01A0819E90067AB66 /* JKPluginCtrlBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKPluginCtrlBase.h; sourceTree = "<group>"; };
+		4A94AFC11A0819E90067AB66 /* JKPluginCtrlBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKPluginCtrlBase.m; sourceTree = "<group>"; };
+		4A94AFC51A0824A30067AB66 /* JKUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKUtils.h; sourceTree = "<group>"; };
+		4A94AFC61A0827E00067AB66 /* JKPluginTouchDispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKPluginTouchDispatcher.h; sourceTree = "<group>"; };
+		4A94AFC71A0827E00067AB66 /* JKPluginTouchDispatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKPluginTouchDispatcher.m; sourceTree = "<group>"; };
+		4A94AFC81A0827E00067AB66 /* JKPluginTouchHandlerBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKPluginTouchHandlerBase.h; sourceTree = "<group>"; };
+		4A94AFC91A0827E00067AB66 /* JKPluginTouchHandlerBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKPluginTouchHandlerBase.m; sourceTree = "<group>"; };
+		4A94AFCC1A082CCB0067AB66 /* JKTouchHandlerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKTouchHandlerProtocol.h; sourceTree = "<group>"; };
+		4A94AFD21A08FAB80067AB66 /* JKGameKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JKGameKit.h; sourceTree = "<group>"; };
+		4A94AFE31A0913200067AB66 /* JKTextureCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKTextureCache.h; sourceTree = "<group>"; };
+		4A94AFE41A0913200067AB66 /* JKTextureCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKTextureCache.m; sourceTree = "<group>"; };
+		4A94AFE61A0913920067AB66 /* JKOrderedDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKOrderedDictionary.h; sourceTree = "<group>"; };
+		4A94AFE71A0913920067AB66 /* JKOrderedDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKOrderedDictionary.m; sourceTree = "<group>"; };
+		4A94AFE91A094A480067AB66 /* JKDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JKDefines.h; sourceTree = "<group>"; };
+		4A94AFEA1A095FCF0067AB66 /* JKPluginAnimationBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKPluginAnimationBase.h; sourceTree = "<group>"; };
+		4A94AFEB1A095FCF0067AB66 /* JKPluginAnimationBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKPluginAnimationBase.m; sourceTree = "<group>"; };
 		4AA0F80C1A06DEC600E5756D /* libJKGameKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libJKGameKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		4AA0F80F1A06DEC600E5756D /* JKGameKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JKGameKit.h; sourceTree = "<group>"; };
-		4AA0F8111A06DEC600E5756D /* JKGameKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JKGameKit.m; sourceTree = "<group>"; };
 		4AA0F8171A06DEC600E5756D /* JKGameKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JKGameKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AA0F81D1A06DEC600E5756D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4AA0F8281A06E11600E5756D /* JKNodeProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKNodeProtocol.h; sourceTree = "<group>"; };
+		4ABF50AC1A126281006CD964 /* JKShadowedLabelNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKShadowedLabelNode.h; sourceTree = "<group>"; };
+		4ABF50AD1A126281006CD964 /* JKShadowedLabelNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKShadowedLabelNode.m; sourceTree = "<group>"; };
+		4ABF50BD1A176352006CD964 /* JKContactHandlerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JKContactHandlerProtocol.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +121,70 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A94AF741A07BD0E0067AB66 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				4A94AFC51A0824A30067AB66 /* JKUtils.h */,
+				4A94AFE31A0913200067AB66 /* JKTextureCache.h */,
+				4A94AFE41A0913200067AB66 /* JKTextureCache.m */,
+				4A94AFC31A081AC50067AB66 /* Scenes */,
+				4A94AFAC1A080CE70067AB66 /* Nodes */,
+				4A94AFBC1A0813EE0067AB66 /* Plugins */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		4A94AFAC1A080CE70067AB66 /* Nodes */ = {
+			isa = PBXGroup;
+			children = (
+				4ABF50AC1A126281006CD964 /* JKShadowedLabelNode.h */,
+				4ABF50AD1A126281006CD964 /* JKShadowedLabelNode.m */,
+				4A94AFA31A07FAF60067AB66 /* JKNode.h */,
+				4A94AFA41A07FAF60067AB66 /* JKNode.m */,
+				4A94AFB31A080EB10067AB66 /* JKSpriteNode.h */,
+				4A94AFB41A080EB10067AB66 /* JKSpriteNode.m */,
+				4A94AFB61A080FE40067AB66 /* JKGameNode.h */,
+				4A94AFB71A080FE40067AB66 /* JKGameNode.m */,
+				4A94AFA91A080CDA0067AB66 /* JKWorldNode.h */,
+				4A94AFAA1A080CDA0067AB66 /* JKWorldNode.m */,
+				4A94AFAD1A080D0F0067AB66 /* JKHudNode.h */,
+				4A94AFAE1A080D0F0067AB66 /* JKHudNode.m */,
+				4A94AFB01A080D1D0067AB66 /* JKCameraNode.h */,
+				4A94AFB11A080D1D0067AB66 /* JKCameraNode.m */,
+			);
+			name = Nodes;
+			sourceTree = "<group>";
+		};
+		4A94AFBC1A0813EE0067AB66 /* Plugins */ = {
+			isa = PBXGroup;
+			children = (
+				4A94AFBD1A0814050067AB66 /* JKPluginBase.h */,
+				4A94AFBE1A0814050067AB66 /* JKPluginBase.m */,
+				4A94AFC61A0827E00067AB66 /* JKPluginTouchDispatcher.h */,
+				4A94AFC71A0827E00067AB66 /* JKPluginTouchDispatcher.m */,
+				4A94AFC81A0827E00067AB66 /* JKPluginTouchHandlerBase.h */,
+				4A94AFC91A0827E00067AB66 /* JKPluginTouchHandlerBase.m */,
+				4A94AFC01A0819E90067AB66 /* JKPluginCtrlBase.h */,
+				4A94AFC11A0819E90067AB66 /* JKPluginCtrlBase.m */,
+				4A94AFEA1A095FCF0067AB66 /* JKPluginAnimationBase.h */,
+				4A94AFEB1A095FCF0067AB66 /* JKPluginAnimationBase.m */,
+				4A3A38C81A10F85D00C1FDAD /* JKPluginContactHandlerBase.h */,
+				4A3A38C91A10F85D00C1FDAD /* JKPluginContactHandlerBase.m */,
+			);
+			name = Plugins;
+			sourceTree = "<group>";
+		};
+		4A94AFC31A081AC50067AB66 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				4A40F5E11A07A94C00DF1CF3 /* JKScene.h */,
+				4A40F5E21A07A94C00DF1CF3 /* JKScene.m */,
+				4A94AFA61A080C930067AB66 /* JKGameScene.h */,
+				4A94AFA71A080C930067AB66 /* JKGameScene.m */,
+			);
+			name = Scenes;
+			sourceTree = "<group>";
+		};
 		4AA0F8031A06DEC600E5756D = {
 			isa = PBXGroup;
 			children = (
@@ -83,8 +206,10 @@
 		4AA0F80E1A06DEC600E5756D /* JKGameKit */ = {
 			isa = PBXGroup;
 			children = (
-				4AA0F80F1A06DEC600E5756D /* JKGameKit.h */,
-				4AA0F8111A06DEC600E5756D /* JKGameKit.m */,
+				4A94AFD21A08FAB80067AB66 /* JKGameKit.h */,
+				4A94AFE91A094A480067AB66 /* JKDefines.h */,
+				4AA0F8291A06E11B00E5756D /* Protocols */,
+				4A94AF741A07BD0E0067AB66 /* Classes */,
 			);
 			path = JKGameKit;
 			sourceTree = "<group>";
@@ -103,6 +228,19 @@
 				4AA0F81D1A06DEC600E5756D /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4AA0F8291A06E11B00E5756D /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				4A94AFE61A0913920067AB66 /* JKOrderedDictionary.h */,
+				4A94AFE71A0913920067AB66 /* JKOrderedDictionary.m */,
+				4AA0F8281A06E11600E5756D /* JKNodeProtocol.h */,
+				4A40F5E01A079E0500DF1CF3 /* JKPluginProtocol.h */,
+				4A94AFCC1A082CCB0067AB66 /* JKTouchHandlerProtocol.h */,
+				4ABF50BD1A176352006CD964 /* JKContactHandlerProtocol.h */,
+			);
+			name = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,7 +331,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4AA0F8121A06DEC600E5756D /* JKGameKit.m in Sources */,
+				4A94AFA81A080C930067AB66 /* JKGameScene.m in Sources */,
+				4A94AFEC1A095FCF0067AB66 /* JKPluginAnimationBase.m in Sources */,
+				4A94AFB21A080D1D0067AB66 /* JKCameraNode.m in Sources */,
+				4A94AFB51A080EB10067AB66 /* JKSpriteNode.m in Sources */,
+				4A94AFE51A0913200067AB66 /* JKTextureCache.m in Sources */,
+				4A3A38CA1A10F85D00C1FDAD /* JKPluginContactHandlerBase.m in Sources */,
+				4A94AFE81A0913920067AB66 /* JKOrderedDictionary.m in Sources */,
+				4A94AFA51A07FAF60067AB66 /* JKNode.m in Sources */,
+				4A94AFB81A080FE40067AB66 /* JKGameNode.m in Sources */,
+				4A94AFBF1A0814050067AB66 /* JKPluginBase.m in Sources */,
+				4A94AFCA1A0827E00067AB66 /* JKPluginTouchDispatcher.m in Sources */,
+				4A40F5E31A07A94C00DF1CF3 /* JKScene.m in Sources */,
+				4A94AFC21A0819E90067AB66 /* JKPluginCtrlBase.m in Sources */,
+				4ABF50AE1A126281006CD964 /* JKShadowedLabelNode.m in Sources */,
+				4A94AFCB1A0827E00067AB66 /* JKPluginTouchHandlerBase.m in Sources */,
+				4A94AFAF1A080D0F0067AB66 /* JKHudNode.m in Sources */,
+				4A94AFAB1A080CDA0067AB66 /* JKWorldNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,8 +446,10 @@
 		4AA0F8211A06DEC600E5756D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jussi Kallio (HL6XFY29QJ)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -301,8 +457,10 @@
 		4AA0F8221A06DEC600E5756D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jussi Kallio (HL6XFY29QJ)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -356,6 +514,7 @@
 				4AA0F8221A06DEC600E5756D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4AA0F8231A06DEC600E5756D /* Build configuration list for PBXNativeTarget "JKGameKitTests" */ = {
 			isa = XCConfigurationList;
@@ -364,6 +523,7 @@
 				4AA0F8251A06DEC600E5756D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
