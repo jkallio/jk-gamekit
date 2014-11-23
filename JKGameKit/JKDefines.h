@@ -29,7 +29,7 @@
 
 #define PIXELS(x) x
 
-#define NODE_NAME_BODY_SHAPE            @"NodeBodyShape"
+#define NODE_NAME_HERO                  @"NodeHero"
 
 #define PLUGIN_KEY_CONTROLLER           @"PluginCtrl"
 #define PLUGIN_KEY_TOUCH_HANDLER        @"PluginTouchHandler"

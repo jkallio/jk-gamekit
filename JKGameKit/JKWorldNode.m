@@ -9,6 +9,7 @@
 #import "JKDefines.h"
 #import "JKGameScene.h"
 #import "JKCameraNode.h"
+#import "JKGameNode.h"
 #import "JKWorldNode.h"
 
 @implementation JKWorldNode
@@ -27,5 +28,14 @@
 {
     JKAssert(NO, @"Child world must implement");
     return nil;
+}
+
+- (JKGameNode*) hero
+{
+    if (!_hero)
+    {
+        _hero = [JKGameNode cast:[self childNodeWithName:NODE_NAME_HERO]];
+    }
+    return _hero;
 }
 @end
