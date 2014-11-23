@@ -24,8 +24,8 @@
 - (void) setSpriteTexture:(SKTexture*)texture;
 
 #pragma -- Sensors
-- (void) setSensor:(JKSpriteNode*)sensor Name:(NSString*)name;
-- (JKSpriteNode*) sensorNamed:(NSString*)name;
+- (void) setSensor:(JKGameNode*)sensor Name:(NSString*)name;
+- (JKGameNode*) sensorNamed:(NSString*)name;
 
 #pragma mark -- Custom Properties
 - (void) setProperty:(NSString*)key String:(NSString*)value;

@@ -54,7 +54,7 @@ static NSUInteger _ObjIDPool = 0;
 {
     [super onEnter];
     
-    for (JKSpriteNode* sensor in self.sensorsToAttach)
+    for (JKGameNode* sensor in self.sensorsToAttach)
     {
         SKPhysicsJoint* joint = [SKPhysicsJointFixed
                                  jointWithBodyA:self.physicsBody bodyB:sensor.physicsBody
@@ -113,10 +113,12 @@ static NSUInteger _ObjIDPool = 0;
     return _contactHandler;
 }
 
-- (void) setSensor:(JKSpriteNode*)sensor Name:(NSString*)name
+- (void) setSensor:(JKGameNode*)sensor Name:(NSString*)name
 {
+    JKAssert(sensor.spriteNode, @"SpriteNode not set");
+    
     sensor.name = name;
-    sensor.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:sensor.size];
+    sensor.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:sensor.spriteNode.size];
     sensor.physicsBody.categoryBitMask = kCatSensor;
     sensor.physicsBody.collisionBitMask =  kCollisionMaskSensor;
     sensor.physicsBody.contactTestBitMask = kContactMaskSensor;
@@ -124,9 +126,9 @@ static NSUInteger _ObjIDPool = 0;
     [self.sensorsToAttach addObject:sensor];
 }
 
-- (JKSpriteNode*) sensorNamed:(NSString*)name
+- (JKGameNode*) sensorNamed:(NSString*)name
 {
-    return [JKSpriteNode cast:[self childNodeWithName:name]];
+    return [JKGameNode cast:[self childNodeWithName:name]];
 }
 
 #pragma mark --
