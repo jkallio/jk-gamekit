@@ -72,6 +72,7 @@
 - (void) levelLoaded
 {
     [self.levelChangeCurtain runAction:[SKAction fadeOutWithDuration:0.5f]];
+    [self startGame];
 }
 
 - (void) update:(NSTimeInterval)currentTime
@@ -92,6 +93,8 @@
 
 - (void) pause
 {
+    self.physicsWorld.speed = 0.0f;
+    
     for (id<JKNodeProtocol> node in self.subscribedNodes)
     {
         if ([node respondsToSelector:@selector(onGamePause)])
@@ -111,6 +114,8 @@
 
 - (void) resume
 {
+    self.physicsWorld.speed = 1.0f;
+    
     for (id<JKNodeProtocol> node in self.subscribedNodes)
     {
         if ([node respondsToSelector:@selector(onGameResume)])
@@ -192,13 +197,11 @@
         [self.hud removeFromParent];
         self.hud = nil;
     }
-    
-    self.world = self.nextLevel;
-    [self.world LoadLevel];
-    [self levelLoaded];
     [__sharedTextureCache purgeTextureCache];
     
+    self.world = self.nextLevel;
     self.nextLevel = nil;
+    [self.world LoadLevel];
     
     JKHudNode* hud = [self.world loadHUD];
     if (hud)
@@ -206,6 +209,8 @@
         [self addChild:hud];
         self.hud = hud;
     }
+    
+    [self levelLoaded];
 }
 
 - (void) centerOnNode:(SKNode *)node
