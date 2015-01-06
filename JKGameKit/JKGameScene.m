@@ -201,7 +201,7 @@
     
     self.world = self.nextLevel;
     self.nextLevel = nil;
-    [self.world LoadLevel];
+    [self.world loadLevel];
     
     JKHudNode* hud = [self.world loadHUD];
     if (hud)

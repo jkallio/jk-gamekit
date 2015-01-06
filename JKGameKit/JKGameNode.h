@@ -32,10 +32,12 @@
 - (void) setProperty:(NSString*)key Integer:(NSInteger)value;
 - (void) setProperty:(NSString*)key Float:(CGFloat)value;
 - (void) setProperty:(NSString*)key Bool:(BOOL)value;
+- (void) setProperty:(NSString*)key Object:(id)ref;
 
 - (NSString*) getStringProperty:(NSString*)key;
 - (NSInteger) getIntProperty:(NSString*)key;
 - (CGFloat) getFloatProperty:(NSString*)key;
 - (BOOL) getBoolProperty:(NSString*)key;
+- (id) getObjectProperty:(NSString*)key;
 
 @end

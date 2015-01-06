@@ -169,6 +169,15 @@ static NSUInteger _ObjIDPool = 0;
     [self.userData setObject:[NSNumber numberWithInteger:value ? 1 : 0] forKey:key];
 }
 
+- (void) setProperty:(NSString *)key Object:(id)ref
+{
+    if (!self.userData)
+    {
+        self.userData = [NSMutableDictionary dictionary];
+    }
+    [self.userData setObject:ref forKey:key];
+}
+
 
 #pragma mark --
 #pragma mark Property Getters
@@ -210,6 +219,11 @@ static NSUInteger _ObjIDPool = 0;
         NSAssert([prop isKindOfClass:[NSNumber class]], @"Invalid type %@", [prop class]);
     }
     return ([(NSNumber*)prop integerValue] != 0);
+}
+
+- (id) getObjectProperty:(NSString *)key
+{
+    return [self.userData objectForKey:key];
 }
 
 @end

@@ -28,6 +28,7 @@
 		4A94AFEC1A095FCF0067AB66 /* JKPluginAnimationBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A94AFEB1A095FCF0067AB66 /* JKPluginAnimationBase.m */; };
 		4AA0F8181A06DEC600E5756D /* libJKGameKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AA0F80C1A06DEC600E5756D /* libJKGameKit.a */; };
 		4ABF50AE1A126281006CD964 /* JKShadowedLabelNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABF50AD1A126281006CD964 /* JKShadowedLabelNode.m */; };
+		4AC616CA1A5C0AAB00E56184 /* SKTexture+PatternAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC616C91A5C0AAB00E56184 /* SKTexture+PatternAddition.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +101,8 @@
 		4ABF50AC1A126281006CD964 /* JKShadowedLabelNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKShadowedLabelNode.h; sourceTree = "<group>"; };
 		4ABF50AD1A126281006CD964 /* JKShadowedLabelNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKShadowedLabelNode.m; sourceTree = "<group>"; };
 		4ABF50BD1A176352006CD964 /* JKContactHandlerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JKContactHandlerProtocol.h; sourceTree = "<group>"; };
+		4AC616C81A5C0AAB00E56184 /* SKTexture+PatternAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKTexture+PatternAddition.h"; sourceTree = "<group>"; };
+		4AC616C91A5C0AAB00E56184 /* SKTexture+PatternAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKTexture+PatternAddition.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +209,7 @@
 		4AA0F80E1A06DEC600E5756D /* JKGameKit */ = {
 			isa = PBXGroup;
 			children = (
+				4AC616C71A5C0A8E00E56184 /* Categories */,
 				4A94AFD21A08FAB80067AB66 /* JKGameKit.h */,
 				4A94AFE91A094A480067AB66 /* JKDefines.h */,
 				4AA0F8291A06E11B00E5756D /* Protocols */,
@@ -241,6 +245,15 @@
 				4ABF50BD1A176352006CD964 /* JKContactHandlerProtocol.h */,
 			);
 			name = Protocols;
+			sourceTree = "<group>";
+		};
+		4AC616C71A5C0A8E00E56184 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				4AC616C81A5C0AAB00E56184 /* SKTexture+PatternAddition.h */,
+				4AC616C91A5C0AAB00E56184 /* SKTexture+PatternAddition.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -345,6 +358,7 @@
 				4A40F5E31A07A94C00DF1CF3 /* JKScene.m in Sources */,
 				4A94AFC21A0819E90067AB66 /* JKPluginCtrlBase.m in Sources */,
 				4ABF50AE1A126281006CD964 /* JKShadowedLabelNode.m in Sources */,
+				4AC616CA1A5C0AAB00E56184 /* SKTexture+PatternAddition.m in Sources */,
 				4A94AFCB1A0827E00067AB66 /* JKPluginTouchHandlerBase.m in Sources */,
 				4A94AFAF1A080D0F0067AB66 /* JKHudNode.m in Sources */,
 				4A94AFAB1A080CDA0067AB66 /* JKWorldNode.m in Sources */,

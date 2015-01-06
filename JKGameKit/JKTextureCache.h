@@ -19,4 +19,5 @@
 - (void) purgeTextureCache;
 - (SKTexture*) getTextureNamed:(NSString*)name;
 - (NSArray*) getTexturesWithNameBase:(NSString*)nameBase Count:(NSInteger)count;
+- (SKTexture*) getTexturePatternNamed:(NSString*)name Size:(CGSize) size;
 @end

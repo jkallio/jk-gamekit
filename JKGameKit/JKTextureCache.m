@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Kallio. All rights reserved.
 //
 
+#import "SKTexture+PatternAddition.h"
 #import "JKOrderedDictionary.h"
 #import "JKTextureCache.h"
 
@@ -73,6 +74,20 @@ static BOOL _isInitialized = NO;
     
     NSAssert(frameList.count > 0, @"No frames found! (%@##)", nameBase);
     return frameList;
+}
+
+- (SKTexture*) getTexturePatternNamed:(NSString *)name Size:(CGSize)size
+{
+    UIImage* img = [UIImage imageNamed:name];
+    NSAssert(img, @"Image not found with name '%@'", name);
+    
+    if (size.height <= 0 || size.width <= 0)
+    {
+        float width = size.width > 0 ? size.width : img.size.width;
+        float height = size.height > 0 ? size.height : img.size.height;
+        size = CGSizeMake(width, height);
+    }
+    return [SKTexture textureWithPatternImage:img size:size];
 }
 
 @end

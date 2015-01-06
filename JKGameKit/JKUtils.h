@@ -93,6 +93,13 @@ static inline BOOL randomBool()
     return (randomInteger(0, 100) >= 50);
 }
 
+static inline NSInteger moduloPositive(NSInteger value, NSInteger modulo)
+{
+    value = value % modulo;
+    value += (value < 0) ? modulo : 0;
+    return value;
+}
+
 /*
 static void vomitFontNames()
 {

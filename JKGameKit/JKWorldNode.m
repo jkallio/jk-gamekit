@@ -14,7 +14,7 @@
 
 @implementation JKWorldNode
 
-- (void) LoadLevel
+- (void) loadLevel
 {
     self.name = @"WorldNode";
     

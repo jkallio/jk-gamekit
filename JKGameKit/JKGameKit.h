@@ -14,6 +14,9 @@
 #import "JKDefines.h"
 #import "JKTextureCache.h"
 
+#pragma mark -- Categories
+#import "SKTexture+PatternAddition.h"
+
 #pragma mark -- Protocols
 #import "JKNodeProtocol.h"
 #import "JKPluginProtocol.h"

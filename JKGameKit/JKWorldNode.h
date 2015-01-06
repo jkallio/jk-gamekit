@@ -15,7 +15,7 @@
 @property (nonatomic, weak) JKCameraNode* camera;
 @property (nonatomic, weak) JKGameNode* hero;
 
-- (void) LoadLevel;
+- (void) loadLevel;
 - (JKHudNode*) loadHUD;
 
 @end
