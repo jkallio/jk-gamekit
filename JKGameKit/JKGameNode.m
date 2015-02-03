@@ -33,6 +33,7 @@ static NSUInteger _ObjIDPool = 0;
         
         _sensorsToAttach = [NSHashTable weakObjectsHashTable];
         _joints = [NSHashTable weakObjectsHashTable];
+        _saveToXML = YES;
     }
     return self;
 }

@@ -10,13 +10,14 @@
 @class JKWorldNode;
 @class JKHudNode;
 @class JKGameNode;
+@class JKNodeFactory;
 
 @interface JKGameScene : JKScene <SKPhysicsContactDelegate>
 
 @property (nonatomic, weak) JKWorldNode* world;
 @property (nonatomic, weak) JKHudNode* hud;
 @property (nonatomic, weak) JKGameNode* activeNode;
-
+@property (nonatomic) JKNodeFactory* nodeFactory;
 
 + (instancetype) sceneWithSize:(CGSize)size Level:(JKWorldNode*) level;
 - (instancetype) initWithSize:(CGSize)size Level:(JKWorldNode*) level;

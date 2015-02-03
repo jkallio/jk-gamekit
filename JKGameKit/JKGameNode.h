@@ -13,8 +13,9 @@
 
 @interface JKGameNode : JKNode
 
-@property (nonatomic, readonly) NSInteger objID;
+@property (nonatomic) NSInteger objID;
 @property (nonatomic) NSInteger objType;
+@property (nonatomic) BOOL saveToXML;
 
 @property (nonatomic, weak) JKSpriteNode* spriteNode;
 @property (nonatomic, weak, readonly) JKPluginCtrlBase* controller;

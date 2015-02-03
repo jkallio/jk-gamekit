@@ -14,8 +14,12 @@
 
 @property (nonatomic, weak) JKCameraNode* camera;
 @property (nonatomic, weak) JKGameNode* hero;
+@property (nonatomic) CGRect borders;
+@property (nonatomic) NSString* levelName;
 
-- (void) loadLevel;
+- (instancetype) initWithLevelName:(NSString *)levelName;
+- (BOOL) loadLevel;
+- (BOOL) saveLevel;
 - (JKHudNode*) loadHUD;
 
 @end

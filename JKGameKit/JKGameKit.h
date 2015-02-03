@@ -16,6 +16,7 @@
 
 #pragma mark -- Categories
 #import "SKTexture+PatternAddition.h"
+#import "GDataXMLElement+elementForName.h"
 
 #pragma mark -- Protocols
 #import "JKNodeProtocol.h"
@@ -25,6 +26,10 @@
 #pragma mark -- Scenes
 #import "JKScene.h"
 #import "JKGameScene.h"
+
+#pragma mark -- XML Helper
+#import "JKNodeFactory.h"
+#import "JKObjectXML.h"
 
 #pragma mark -- Base Nodes
 #import "JKNode.h"

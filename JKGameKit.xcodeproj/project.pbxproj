@@ -10,8 +10,14 @@
 		4A1052D11A07B8F900946485 /* JKNodeProtocol.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4AA0F8281A06E11600E5756D /* JKNodeProtocol.h */; };
 		4A1052D21A07B8F900946485 /* JKPluginProtocol.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4A40F5E01A079E0500DF1CF3 /* JKPluginProtocol.h */; };
 		4A1052D31A07B8F900946485 /* JKScene.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4A40F5E11A07A94C00DF1CF3 /* JKScene.h */; };
+		4A1BA0691A816A95009B63BF /* GDataXMLElement+elementForName.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1BA0681A816A95009B63BF /* GDataXMLElement+elementForName.m */; };
 		4A3A38CA1A10F85D00C1FDAD /* JKPluginContactHandlerBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A3A38C91A10F85D00C1FDAD /* JKPluginContactHandlerBase.m */; };
 		4A40F5E31A07A94C00DF1CF3 /* JKScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A40F5E21A07A94C00DF1CF3 /* JKScene.m */; };
+		4A4296761A7E39AB008DFC13 /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4296751A7E39AB008DFC13 /* GDataXMLNode.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4A4296801A7E39F4008DFC13 /* JKFileHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4296791A7E39F4008DFC13 /* JKFileHelper.m */; };
+		4A4296821A7E39F4008DFC13 /* JKXMLHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A42967D1A7E39F4008DFC13 /* JKXMLHelper.m */; };
+		4A4296831A7E39F4008DFC13 /* JKObjectXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A42967F1A7E39F4008DFC13 /* JKObjectXML.m */; };
+		4A42968F1A8012F2008DFC13 /* JKNodeFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A42968E1A8012F2008DFC13 /* JKNodeFactory.m */; };
 		4A94AFA51A07FAF60067AB66 /* JKNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A94AFA41A07FAF60067AB66 /* JKNode.m */; };
 		4A94AFA81A080C930067AB66 /* JKGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A94AFA71A080C930067AB66 /* JKGameScene.m */; };
 		4A94AFAB1A080CDA0067AB66 /* JKWorldNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A94AFAA1A080CDA0067AB66 /* JKWorldNode.m */; };
@@ -57,11 +63,25 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4A1BA0591A80232E009B63BF /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		4A1BA0671A816A95009B63BF /* GDataXMLElement+elementForName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GDataXMLElement+elementForName.h"; sourceTree = "<group>"; };
+		4A1BA0681A816A95009B63BF /* GDataXMLElement+elementForName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GDataXMLElement+elementForName.m"; sourceTree = "<group>"; };
 		4A3A38C81A10F85D00C1FDAD /* JKPluginContactHandlerBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKPluginContactHandlerBase.h; sourceTree = "<group>"; };
 		4A3A38C91A10F85D00C1FDAD /* JKPluginContactHandlerBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKPluginContactHandlerBase.m; sourceTree = "<group>"; };
 		4A40F5E01A079E0500DF1CF3 /* JKPluginProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKPluginProtocol.h; sourceTree = "<group>"; };
 		4A40F5E11A07A94C00DF1CF3 /* JKScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKScene.h; sourceTree = "<group>"; };
 		4A40F5E21A07A94C00DF1CF3 /* JKScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKScene.m; sourceTree = "<group>"; };
+		4A4296701A7E3980008DFC13 /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
+		4A4296741A7E39AB008DFC13 /* GDataXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLNode.h; sourceTree = "<group>"; };
+		4A4296751A7E39AB008DFC13 /* GDataXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataXMLNode.m; sourceTree = "<group>"; };
+		4A4296781A7E39F4008DFC13 /* JKFileHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKFileHelper.h; sourceTree = "<group>"; };
+		4A4296791A7E39F4008DFC13 /* JKFileHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKFileHelper.m; sourceTree = "<group>"; };
+		4A42967C1A7E39F4008DFC13 /* JKXMLHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKXMLHelper.h; sourceTree = "<group>"; };
+		4A42967D1A7E39F4008DFC13 /* JKXMLHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKXMLHelper.m; sourceTree = "<group>"; };
+		4A42967E1A7E39F4008DFC13 /* JKObjectXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKObjectXML.h; sourceTree = "<group>"; };
+		4A42967F1A7E39F4008DFC13 /* JKObjectXML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKObjectXML.m; sourceTree = "<group>"; };
+		4A42968D1A8012F2008DFC13 /* JKNodeFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKNodeFactory.h; sourceTree = "<group>"; };
+		4A42968E1A8012F2008DFC13 /* JKNodeFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKNodeFactory.m; sourceTree = "<group>"; };
 		4A94AFA31A07FAF60067AB66 /* JKNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKNode.h; sourceTree = "<group>"; };
 		4A94AFA41A07FAF60067AB66 /* JKNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKNode.m; sourceTree = "<group>"; };
 		4A94AFA61A080C930067AB66 /* JKGameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKGameScene.h; sourceTree = "<group>"; };
@@ -124,6 +144,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A4296721A7E398E008DFC13 /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				4A4296731A7E39A1008DFC13 /* XML */,
+			);
+			name = Libs;
+			sourceTree = "<group>";
+		};
+		4A4296731A7E39A1008DFC13 /* XML */ = {
+			isa = PBXGroup;
+			children = (
+				4A4296701A7E3980008DFC13 /* libxml2.2.dylib */,
+				4A4296741A7E39AB008DFC13 /* GDataXMLNode.h */,
+				4A4296751A7E39AB008DFC13 /* GDataXMLNode.m */,
+			);
+			name = XML;
+			sourceTree = "<group>";
+		};
+		4A4296771A7E39E1008DFC13 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				4A4296781A7E39F4008DFC13 /* JKFileHelper.h */,
+				4A4296791A7E39F4008DFC13 /* JKFileHelper.m */,
+				4A42967C1A7E39F4008DFC13 /* JKXMLHelper.h */,
+				4A42967D1A7E39F4008DFC13 /* JKXMLHelper.m */,
+				4A42967E1A7E39F4008DFC13 /* JKObjectXML.h */,
+				4A42967F1A7E39F4008DFC13 /* JKObjectXML.m */,
+				4A42968D1A8012F2008DFC13 /* JKNodeFactory.h */,
+				4A42968E1A8012F2008DFC13 /* JKNodeFactory.m */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
 		4A94AF741A07BD0E0067AB66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,8 +244,10 @@
 		4AA0F8031A06DEC600E5756D = {
 			isa = PBXGroup;
 			children = (
+				4A1BA0591A80232E009B63BF /* libxml2.dylib */,
 				4AA0F80E1A06DEC600E5756D /* JKGameKit */,
 				4AA0F81B1A06DEC600E5756D /* JKGameKitTests */,
+				4A4296721A7E398E008DFC13 /* Libs */,
 				4AA0F80D1A06DEC600E5756D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -209,9 +264,10 @@
 		4AA0F80E1A06DEC600E5756D /* JKGameKit */ = {
 			isa = PBXGroup;
 			children = (
-				4AC616C71A5C0A8E00E56184 /* Categories */,
 				4A94AFD21A08FAB80067AB66 /* JKGameKit.h */,
 				4A94AFE91A094A480067AB66 /* JKDefines.h */,
+				4A4296771A7E39E1008DFC13 /* Common */,
+				4AC616C71A5C0A8E00E56184 /* Categories */,
 				4AA0F8291A06E11B00E5756D /* Protocols */,
 				4A94AF741A07BD0E0067AB66 /* Classes */,
 			);
@@ -250,6 +306,8 @@
 		4AC616C71A5C0A8E00E56184 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				4A1BA0671A816A95009B63BF /* GDataXMLElement+elementForName.h */,
+				4A1BA0681A816A95009B63BF /* GDataXMLElement+elementForName.m */,
 				4AC616C81A5C0AAB00E56184 /* SKTexture+PatternAddition.h */,
 				4AC616C91A5C0AAB00E56184 /* SKTexture+PatternAddition.m */,
 			);
@@ -347,6 +405,7 @@
 				4A94AFA81A080C930067AB66 /* JKGameScene.m in Sources */,
 				4A94AFEC1A095FCF0067AB66 /* JKPluginAnimationBase.m in Sources */,
 				4A94AFB21A080D1D0067AB66 /* JKCameraNode.m in Sources */,
+				4A4296761A7E39AB008DFC13 /* GDataXMLNode.m in Sources */,
 				4A94AFB51A080EB10067AB66 /* JKSpriteNode.m in Sources */,
 				4A94AFE51A0913200067AB66 /* JKTextureCache.m in Sources */,
 				4A3A38CA1A10F85D00C1FDAD /* JKPluginContactHandlerBase.m in Sources */,
@@ -357,7 +416,12 @@
 				4A94AFCA1A0827E00067AB66 /* JKPluginTouchDispatcher.m in Sources */,
 				4A40F5E31A07A94C00DF1CF3 /* JKScene.m in Sources */,
 				4A94AFC21A0819E90067AB66 /* JKPluginCtrlBase.m in Sources */,
+				4A4296821A7E39F4008DFC13 /* JKXMLHelper.m in Sources */,
 				4ABF50AE1A126281006CD964 /* JKShadowedLabelNode.m in Sources */,
+				4A1BA0691A816A95009B63BF /* GDataXMLElement+elementForName.m in Sources */,
+				4A4296801A7E39F4008DFC13 /* JKFileHelper.m in Sources */,
+				4A42968F1A8012F2008DFC13 /* JKNodeFactory.m in Sources */,
+				4A4296831A7E39F4008DFC13 /* JKObjectXML.m in Sources */,
 				4AC616CA1A5C0AAB00E56184 /* SKTexture+PatternAddition.m in Sources */,
 				4A94AFCB1A0827E00067AB66 /* JKPluginTouchHandlerBase.m in Sources */,
 				4A94AFAF1A080D0F0067AB66 /* JKHudNode.m in Sources */,
@@ -461,6 +525,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer: Jussi Kallio (HL6XFY29QJ)";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/include/libxml2,
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -472,6 +541,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer: Jussi Kallio (HL6XFY29QJ)";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/include/libxml2,
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

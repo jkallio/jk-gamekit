@@ -11,6 +11,9 @@
 
 #define DEBUG_VERBOSE 0
 
+#define VALUE_UNDEFINED     INT32_MAX
+#define VALUE_UNDEFINED_F   INT32_MAX
+
 #define JKLog(fmt, ...) NSLog((@"%s - #log: " fmt), __PRETTY_FUNCTION__, ##__VA_ARGS__)
 #define JKWarning(fmt, ...) NSLog((@"%s - #warning: " fmt), __PRETTY_FUNCTION__, ##__VA_ARGS__)
 #define JKError(fmt, ...) NSLog((@"%s - #error: " fmt), __PRETTY_FUNCTION__, ##__VA_ARGS__);
@@ -28,6 +31,8 @@
 #endif
 
 #define PIXELS(x) x
+
+#define LEVEL_FOLDER_NAME               @"levels"
 
 #define NODE_NAME_HERO                  @"NodeHero"
 

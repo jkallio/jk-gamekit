@@ -34,6 +34,7 @@
 
 - (instancetype) initWithSize:(CGSize)size
 {
+    // NOTE! use [initWithSize: Level:] instead
     NSAssert(NO, @"Level not specified!");
     return [super initWithSize:size];
 }
@@ -204,7 +205,7 @@
     [self.world loadLevel];
     
     JKHudNode* hud = [self.world loadHUD];
-    if (hud)
+    if (hud != nil)
     {
         [self addChild:hud];
         self.hud = hud;
