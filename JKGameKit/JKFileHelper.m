@@ -1,4 +1,4 @@
-//
+	//
 //  FileHelper.m
 //  BadPuppies
 //
@@ -151,7 +151,7 @@
 {
     GDataXMLElement* levelRoot = nil;
     if (![JKFileHelper levelExists:levelName InDirectory:DIR_DOCUMENTS] && [JKFileHelper levelExists:levelName InDirectory:DIR_BUNDLE])
-    {
+    {	
         [JKFileHelper copyLevelFromBundleToDocuments:levelName];
     }
     
@@ -164,7 +164,7 @@
         GDataXMLDocument* xmlDoc = [[GDataXMLDocument alloc] initWithData:[[NSMutableData alloc] initWithContentsOfFile:filePath] options:0 error:&error];
         if (!xmlDoc)
         {
-            JKAssert(NO, @"Level file not found %@ (error=%@)", filePath, error.description);
+            JKAssert(NO, @"%@", filePath, error.description);
             return nil;
         }
         levelRoot = [xmlDoc.rootElement copy];

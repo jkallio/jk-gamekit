@@ -28,6 +28,7 @@
 /// Attribute Keys
 #define XML_ATTRB_VALUE_TYPE        @"value_type"
 #define XML_ATTRB_FLOAT_PRECISION   @"precision"
+#define XML_ATTRB_OBJ_ID            @"id"
 
 // Value types for XML Element
 #define VALUE_TYPE_STRING           @"string"

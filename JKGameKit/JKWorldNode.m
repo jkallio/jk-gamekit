@@ -77,7 +77,7 @@
             }
             else
             {
-                JKDebugLog(@"%@ skipped", gameNode.name);
+                JKDebugLog(@"skipped %@", (gameNode.name != nil ? gameNode.name : gameNode.description));
             }
         }
         [rootElement addChild:objectList];

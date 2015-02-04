@@ -185,12 +185,19 @@
 {
     JKObjectXML* obj = [JKObjectXML new];
     
+    for (GDataXMLElement* attr in root.attributes)
+    {
+        if ([attr.name isEqualToString:XML_ATTRB_OBJ_ID])
+        {   obj.objID = attr.stringValue.integerValue;
+        }
+        else
+        {   JKAssert(NO, @"Unknown attribute %@; %@", attr.name, attr.description);
+        }
+    }
+    
     for (GDataXMLElement* element in root.children)
     {
-        if ([element.name isEqualToString:XML_KEY_OBJ_ID])
-        {   obj.objID = [JKXMLHelper getIntValueFromElement:element];
-        }
-        else if ([element.name isEqualToString:XML_KEY_OBJ_TYPE])
+        if ([element.name isEqualToString:XML_KEY_OBJ_TYPE])
         {   obj.objType = [JKXMLHelper getIntValueFromElement:element];
         }
         else if ([element.name isEqualToString:XML_KEY_SIZE])
@@ -253,15 +260,15 @@
 + (GDataXMLElement*) xmlElementFromGameNode:(JKGameNode*)gameNode
 {
     GDataXMLElement* xmlNode = [GDataXMLNode elementWithName:XML_KEY_OBJECT];
-    [xmlNode addChild:[JKXMLHelper createIntegerElement:gameNode.objID Named:XML_KEY_OBJ_ID]];
+    [xmlNode addAttribute:[GDataXMLElement elementWithName:XML_ATTRB_OBJ_ID stringValue:NSStringFromInteger(gameNode.objID)]];
     [xmlNode addChild:[JKXMLHelper createIntegerElement:gameNode.objType Named:XML_KEY_OBJ_TYPE]];
     [xmlNode addChild:[JKXMLHelper createPointElement:gameNode.position Named:XML_KEY_POSITION]];
     [xmlNode addChild:[JKXMLHelper createFloatElement:gameNode.zPosition Precision:2 Named:XML_KEY_ZPOS]];
-    [xmlNode addChild:[JKXMLHelper createFloatElement:gameNode.zRotation Precision:2 Named:XML_KEY_ROTATION]];
     
     if (gameNode.spriteNode)
     {
-        [xmlNode addChild: [JKXMLHelper createSizeElement:gameNode.spriteNode.size Named:XML_KEY_SIZE]];
+        [xmlNode addChild:[JKXMLHelper createSizeElement:gameNode.spriteNode.size Named:XML_KEY_SIZE]];
+        [xmlNode addChild:[JKXMLHelper createFloatElement:gameNode.zRotation Precision:2 Named:XML_KEY_ROTATION]];
         
         if ([gameNode.spriteNode colorBlendFactor] > 0.0f)
         {
