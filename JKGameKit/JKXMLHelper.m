@@ -51,6 +51,7 @@
 + (GDataXMLElement*) createSizeElement:(CGSize)value Named:(NSString *)name
 {
     GDataXMLElement* element = [GDataXMLNode elementWithName:name];
+    [element addAttribute:[GDataXMLElement elementWithName:XML_ATTRB_VALUE_TYPE stringValue:VALUE_TYPE_SIZE]];
     [element addChild:[JKXMLHelper createFloatElement:value.width Precision:5 Named:@"width"]];
     [element addChild:[JKXMLHelper createFloatElement:value.height Precision:5 Named:@"height"]];
     return element;

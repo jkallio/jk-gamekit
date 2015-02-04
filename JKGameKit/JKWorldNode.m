@@ -41,7 +41,6 @@
         JKLog(@"Loading level data %@...", self.levelName);
         
         GDataXMLElement* levelRoot = [JKFileHelper loadLevelAsXML:self.levelName];
-        JKDebugLog(@"%@", levelRoot.name);
         if (levelRoot != nil && [levelRoot.name isEqualToString:XML_KEY_LEVEL])
         {
             CGSize worldSize = [JKXMLHelper getSizeValueFromElement:[levelRoot elementForName:XML_KEY_SIZE]];
