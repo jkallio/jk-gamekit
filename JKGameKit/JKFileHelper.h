@@ -20,10 +20,12 @@ typedef enum _EDirectory
 + (BOOL) fileExists:(NSString *)fileName InDirectory:(EDirectory)dir;
 + (BOOL) fileExists:(NSString *)fileName;
 + (BOOL) levelExists:(NSString *)levelName;
++ (BOOL) levelExists:(NSString *)levelName InDirectory:(EDirectory)dir;
 
 + (NSString*) fullPathForFileNamed:(NSString *)fileName InDirectory:(EDirectory)dir;
 + (NSString*) fullPathForLevelNamed:(NSString *)levelName;
 
++ (BOOL) copyLevelFromBundleToDocuments:(NSString*)levelName;
 + (BOOL) createFolder:(NSString *)folderName;
 + (BOOL) saveLevelAsXML:(GDataXMLElement*)rootElement levelName:(NSString*)levelName;
 + (GDataXMLElement*) loadLevelAsXML:(NSString*)levelName;

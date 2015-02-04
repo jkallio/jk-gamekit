@@ -131,8 +131,6 @@
     {
         x = [JKXMLHelper getFloatValueFromElement:[element elementForName:@"x"]];
         y = [JKXMLHelper getFloatValueFromElement:[element elementForName:@"y"]];
-        //x = [JKXMLHelper getFloatNamed:@"x" FromElement:element];
-        //y = [JKXMLHelper getFloatNamed:@"y" FromElement:element];
         JKAssert(x != VALUE_UNDEFINED_F && y != VALUE_UNDEFINED_F, @"Invalid XML structure! (%.2f, %.2f)", x, y);
     }
     else
@@ -152,8 +150,6 @@
     {
         width = [JKXMLHelper getFloatValueFromElement:[element elementForName:@"width"]];
         height = [JKXMLHelper getFloatValueFromElement:[element elementForName:@"height"]];
-        //width = [JKXMLHelper getFloatNamed:@"width" FromElement:element];
-        //height = [JKXMLHelper getFloatNamed:@"height" FromElement:element];
         JKAssert(width != VALUE_UNDEFINED_F && height != VALUE_UNDEFINED_F, @"Invalid XML structure! (width=%.2f; height=%.2f)", width, height);
     }
     else
@@ -174,10 +170,6 @@
         CGFloat green = [JKXMLHelper getFloatValueFromElement:[element elementForName:@"green"]];
         CGFloat blue = [JKXMLHelper getFloatValueFromElement:[element elementForName:@"blue"]];
         CGFloat alpha = [JKXMLHelper getFloatValueFromElement:[element elementForName:@"alpha"]];
-        //CGFloat red = [JKXMLHelper getFloatNamed:@"red" FromElement:element];
-        //CGFloat green = [JKXMLHelper getFloatNamed:@"green" FromElement:element];
-        //CGFloat blue = [JKXMLHelper getFloatNamed:@"blue" FromElement:element];
-        //CGFloat alpha = [JKXMLHelper getFloatNamed:@"alpha" FromElement:element];
         JKAssert(red != VALUE_UNDEFINED_F && green != VALUE_UNDEFINED_F && blue != VALUE_UNDEFINED_F && alpha != VALUE_UNDEFINED_F, @"Invalid xml structure (r=%.2f; g=%.2f; b=%.2f; a=%.2f", red, green, blue, alpha);
         
         color = [SKColor colorWithRed:red green:green blue:blue alpha:alpha];

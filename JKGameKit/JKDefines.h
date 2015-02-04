@@ -32,8 +32,6 @@
 
 #define PIXELS(x) x
 
-#define LEVEL_FOLDER_NAME               @"levels"
-
 #define NODE_NAME_HERO                  @"NodeHero"
 
 #define PLUGIN_KEY_CONTROLLER           @"PluginCtrl"

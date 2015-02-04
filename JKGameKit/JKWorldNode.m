@@ -36,34 +36,24 @@
     [self addChild:camera];
     self.camera = camera;
     
-    if ([JKFileHelper levelExists:self.levelName])
+    GDataXMLElement* levelRoot = [JKFileHelper loadLevelAsXML:self.levelName];
+    if (levelRoot != nil && [levelRoot.name isEqualToString:XML_KEY_LEVEL])
     {
-        JKLog(@"Loading level data %@...", self.levelName);
+        CGSize worldSize = [JKXMLHelper getSizeValueFromElement:[levelRoot elementForName:XML_KEY_SIZE]];
+        self.borders = CGRectMake(-worldSize.width/2, -worldSize.height/2, worldSize.width, worldSize.height);
+        JKDebugLog(@"World size %@", NSStringFromCGSize(worldSize));
         
-        GDataXMLElement* levelRoot = [JKFileHelper loadLevelAsXML:self.levelName];
-        if (levelRoot != nil && [levelRoot.name isEqualToString:XML_KEY_LEVEL])
+        GDataXMLElement* objecList = [levelRoot elementForName:XML_KEY_OBJECT_LIST];
+        NSArray* objects = [objecList elementsForName:XML_KEY_OBJECT];
+        for (GDataXMLElement* element in objects)
         {
-            CGSize worldSize = [JKXMLHelper getSizeValueFromElement:[levelRoot elementForName:XML_KEY_SIZE]];
-            self.borders = CGRectMake(-worldSize.width/2, -worldSize.height/2, worldSize.width, worldSize.height);
-            JKDebugLog(@"World size =%@", NSStringFromCGSize(worldSize));
-            
-            GDataXMLElement* objecList = [levelRoot elementForName:XML_KEY_OBJECT_LIST];
-            NSArray* objects = [objecList elementsForName:XML_KEY_OBJECT];
-            for (GDataXMLElement* element in objects)
-            {
-                JKDebugLog(@"Loading %@", element.name);
-                JKAssert(self.gameScene.nodeFactory != nil, @"NodeFactory not set");
-                JKGameNode* gameNode = [self.gameScene.nodeFactory createGameNodeWithXMLObject:[JKXMLHelper parseObjectFromElement:element]];
-                JKDebugLog(@"Loading #%d: %@...", (int)gameNode.objID, gameNode.name);
-                [self addChild:gameNode];
-            }
-        }
-        else
-        {
-            bSuccess = NO;
+            JKDebugLog(@"Loading %@", element.name);
+            JKAssert(self.gameScene.nodeFactory != nil, @"NodeFactory not set");
+            JKGameNode* gameNode = [self.gameScene.nodeFactory createGameNodeWithXMLObject:[JKXMLHelper parseObjectFromElement:element]];
+            JKDebugLog(@"Loading #%d: %@...", (int)gameNode.objID, gameNode.name);
+            [self addChild:gameNode];
         }
     }
-    
     return bSuccess;
 }
 

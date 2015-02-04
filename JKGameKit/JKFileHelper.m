@@ -10,6 +10,10 @@
 #import "JKWorldNode.h"
 #import "JKFileHelper.h"
 
+#define LEVEL_FOLDER_NAME                       @"levels"
+#define LEVEL_FILENAME_IN_BUNDLE(levelName)     [NSString stringWithFormat:@"%@.xml", levelName]
+#define LEVEL_FILENAME_IN_DOCS(levelName)       [NSString stringWithFormat:@"%@/%@.xml", LEVEL_FOLDER_NAME, levelName]
+
 @implementation JKFileHelper
 
 + (BOOL) fileExists:(NSString*)fileName InDirectory:(EDirectory)dir
@@ -26,8 +30,18 @@
 
 + (BOOL) levelExists:(NSString*)levelName
 {
-    return ([JKFileHelper fileExists:[NSString stringWithFormat:@"%@/%@.xml", LEVEL_FOLDER_NAME, levelName] InDirectory:DIR_DOCUMENTS]
-            || [JKFileHelper fileExists:[NSString stringWithFormat:@"%@.xml", levelName] InDirectory:DIR_BUNDLE]);
+    return ([JKFileHelper levelExists:levelName InDirectory:DIR_DOCUMENTS]
+            || [JKFileHelper levelExists:levelName InDirectory:DIR_BUNDLE]);
+}
+
++ (BOOL) levelExists:(NSString *)levelName InDirectory:(EDirectory)dir
+{
+    switch (dir)
+    {
+        case DIR_DOCUMENTS: return [JKFileHelper fileExists:LEVEL_FILENAME_IN_DOCS(levelName) InDirectory:DIR_DOCUMENTS]; break;
+        case DIR_BUNDLE: return [JKFileHelper fileExists:LEVEL_FILENAME_IN_BUNDLE(levelName) InDirectory:DIR_BUNDLE]; break;
+    }
+    return NO;
 }
 
 + (NSString*) fullPathForFileNamed:(NSString*)fileName InDirectory:(EDirectory)dir
@@ -62,8 +76,30 @@
 
 + (NSString*) fullPathForLevelNamed:(NSString *)levelName
 {
-    [JKFileHelper createFolder:LEVEL_FOLDER_NAME];
-    return [JKFileHelper fullPathForFileNamed:[NSString stringWithFormat:@"%@/%@.xml", LEVEL_FOLDER_NAME, levelName] InDirectory:DIR_DOCUMENTS];
+    NSString* fullPath = nil;
+    if ([JKFileHelper createFolder:LEVEL_FOLDER_NAME])
+    {
+        fullPath = [JKFileHelper fullPathForFileNamed:LEVEL_FILENAME_IN_DOCS(levelName) InDirectory:DIR_DOCUMENTS];
+    }
+    return fullPath;
+}
+
++ (BOOL) copyLevelFromBundleToDocuments:(NSString*)levelName
+{
+    BOOL bSuccess = NO;
+    
+    JKLog(@"Copying level %@ from Bundle to Documents fonlder", levelName);
+    if ([JKFileHelper levelExists:levelName InDirectory:DIR_BUNDLE])
+    {
+        NSError* error = nil;
+        bSuccess = [[NSFileManager defaultManager] copyItemAtPath:[JKFileHelper fullPathForFileNamed:LEVEL_FILENAME_IN_BUNDLE(levelName) InDirectory:DIR_BUNDLE] toPath:[JKFileHelper fullPathForLevelNamed:levelName] error:&error];
+        if (!bSuccess)
+        {
+            JKAssert(NO, @"Failed to copy level %@ from bundle to documents: %@", levelName, error.description);
+        }
+    }
+    
+    return bSuccess;
 }
 
 + (BOOL) createFolder:(NSString *)folderName
@@ -71,7 +107,7 @@
     BOOL folderExists = [JKFileHelper fileExists:folderName InDirectory:DIR_DOCUMENTS];
     if (!folderExists)
     {
-        NSError* error;
+        NSError* error = nil;
         if ([[NSFileManager defaultManager] createDirectoryAtPath:[JKFileHelper fullPathForFileNamed:folderName InDirectory:DIR_DOCUMENTS] withIntermediateDirectories:NO attributes:nil error:&error])
         {
             folderExists = YES;
@@ -87,35 +123,53 @@
 
 + (BOOL) saveLevelAsXML:(GDataXMLElement*)rootElement levelName:(NSString*)levelName
 {
-    NSString* filePath = [JKFileHelper fullPathForLevelNamed:levelName];
-    GDataXMLDocument* xmlDoc = [[GDataXMLDocument alloc] initWithRootElement:rootElement];
-    NSData* xmlData = xmlDoc.XMLData;
+    BOOL bSuccess = NO;
     
-    NSError* error;
-    if ([xmlData writeToFile:filePath options:NSDataWritingAtomic error:&error])
+    NSString* filePath = [JKFileHelper fullPathForLevelNamed:levelName];
+    if (filePath != nil)
     {
-        JKDebugLog(@"Level %@ saved as XML file %@", levelName, filePath);
-        return true;
+        GDataXMLDocument* xmlDoc = [[GDataXMLDocument alloc] initWithRootElement:rootElement];
+        NSData* xmlData = xmlDoc.XMLData;
+        
+        NSError* error = nil;
+        if ([xmlData writeToFile:filePath options:NSDataWritingAtomic error:&error])
+        {
+            JKDebugLog(@"Level %@ saved as XML file %@", levelName, filePath);
+            bSuccess = YES;
+        }
+        else
+        {
+            JKAssert(NO, @"Failed to save level %@ saved as XML file %@: %@", levelName, filePath, error.description);
+            bSuccess = NO;
+        }
     }
-    else
-    {
-        JKAssert(NO, @"Failed to save level %@ saved as XML file %@ (error=%@)", levelName, filePath, error.description);
-        return false;
-    }
+ 
+    return bSuccess;
 }
 
 + (GDataXMLElement*) loadLevelAsXML:(NSString*)levelName
 {
-    NSString* filePath = [JKFileHelper fullPathForLevelNamed:levelName];
-
-    NSError* error;
-    GDataXMLDocument* xmlDoc = [[GDataXMLDocument alloc] initWithData:[[NSMutableData alloc] initWithContentsOfFile:filePath] options:0 error:&error];
-    if (!xmlDoc)
+    GDataXMLElement* levelRoot = nil;
+    if (![JKFileHelper levelExists:levelName InDirectory:DIR_DOCUMENTS] && [JKFileHelper levelExists:levelName InDirectory:DIR_BUNDLE])
     {
-        JKAssert(NO, @"File not found %@ (error=%@)", filePath, error.description);
-        return nil;
+        [JKFileHelper copyLevelFromBundleToDocuments:levelName];
     }
-    return [xmlDoc.rootElement copy];
+    
+    if ([JKFileHelper levelExists:levelName InDirectory:DIR_DOCUMENTS])
+    {
+        JKLog(@"Loading level data %@...", levelName);
+        NSString* filePath = [JKFileHelper fullPathForLevelNamed:levelName];
+        
+        NSError* error = nil;
+        GDataXMLDocument* xmlDoc = [[GDataXMLDocument alloc] initWithData:[[NSMutableData alloc] initWithContentsOfFile:filePath] options:0 error:&error];
+        if (!xmlDoc)
+        {
+            JKAssert(NO, @"Level file not found %@ (error=%@)", filePath, error.description);
+            return nil;
+        }
+        levelRoot = [xmlDoc.rootElement copy];
+    }
+    return levelRoot;
 }
 
 @end
